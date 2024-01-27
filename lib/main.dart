@@ -32,13 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanQRCode()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const ScanQRCode()));
                 });
               },
               child: const Text("Scan QR Code"),
@@ -63,18 +56,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
               onPressed: () {
                 setState(() {
-                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>GenerateQRCode()));
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const GenerateQRCode()));
                 });
               },
               child: const Text("Generate QR Code"),
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
